@@ -1,7 +1,12 @@
-<div class="naavbar">
+<div class="layout">
   <app-navbar></app-navbar>
-  <div class="siidebar">
-    <app-sidebar></app-sidebar>
-    <router-outlet></router-outlet>
+
+  <div class="main-container">
+    <!-- <app-sidebar></app-sidebar> -->
+    <div class="content">
+      <router-outlet></router-outlet>
+    </div>
   </div>
+
+  <app-footer></app-footer>
 </div>

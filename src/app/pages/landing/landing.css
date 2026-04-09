@@ -1,0 +1,19 @@
+.hero-section {
+  /* display: flex; */
+  width: 100vw;
+  height: 100vh;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url('/assets/images/hero.png');
+}
+footer {
+  height: 587px;
+  width: 100vw;
+  background: #131b2b;
+  font: 16px;
+  padding: 48px 0px;
+}
+.container {
+  color: aqua;
+}

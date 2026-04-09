@@ -4,6 +4,8 @@
   background-color: #0b1326;
   padding: 0px 32px;
   gap: 20px;
+  width: 100vw;
+  box-shadow: 5px black;
 }
 .navbar a {
   color: #dae2fd;
