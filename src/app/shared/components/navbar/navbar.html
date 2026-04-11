@@ -1,5 +1,6 @@
 <nav class="navbar navbar-expand-lg">
-  <div class="burgerbtn"><i class="fa-solid fa-bars"></i></div>
+  <button (click)="toggleMenu()" class="bgbtn"><i class="fa-solid fa-bars burgerbtn"></i></button>
+  <app-sidebar [isMenuOpen]="isMenuOpen"></app-sidebar>
   <div class="container-fluid">
     <a class="navbar-brand" href="#">Sentinal Survellance</a>
     <button
