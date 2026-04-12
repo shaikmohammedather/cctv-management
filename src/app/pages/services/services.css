@@ -1,0 +1,21 @@
+.services h1 {
+  font-size: 40px;
+  color: black;
+  padding-top: 80px;
+}
+.card {
+  color: #111;
+  font: 16px;
+  margin: 10px 0px;
+  padding: 15px;
+  height: 250px;
+  width: 100%;
+}
+.repbtn {
+  color: #111;
+  font: 13px;
+  /* background-color: #111; */
+  padding: 1px 16px;
+  height: 45px;
+  width: 111px;
+}
