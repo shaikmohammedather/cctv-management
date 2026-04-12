@@ -17,7 +17,6 @@ export class Services {
     this.selectedService = service;
   }
   submitForm() {
-    // ✅ ADD THIS
     console.log('Form submitted');
     this.isFormOpen = false;
   }
