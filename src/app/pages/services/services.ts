@@ -1,9 +1,24 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-services',
-  imports: [],
+  imports: [FormsModule, CommonModule],
   templateUrl: './services.html',
   styleUrl: './services.css',
 })
-export class Services {}
+export class Services {
+  isFormOpen = false;
+  selectedService = '';
+
+  openForm(service: string) {
+    this.isFormOpen = true;
+    this.selectedService = service;
+  }
+  submitForm() {
+    // ✅ ADD THIS
+    console.log('Form submitted');
+    this.isFormOpen = false;
+  }
+}

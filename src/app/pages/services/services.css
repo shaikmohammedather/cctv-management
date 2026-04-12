@@ -1,21 +1,66 @@
+section {
+  background-color: #031334;
+}
+.services {
+  padding-bottom: 15px;
+}
 .services h1 {
   font-size: 40px;
-  color: black;
+  color: rgb(238, 231, 231);
   padding-top: 80px;
+  padding-bottom: 10px;
+  margin-left: 15px;
 }
 .card {
   color: #111;
-  font: 16px;
-  margin: 10px 0px;
-  padding: 15px;
-  height: 250px;
-  width: 100%;
+  font-size: 16px;
+  margin-bottom: 15px;
+  margin-left: 20px;
+  margin-right: 20px;
+  padding-top: 15px;
+  padding-left: 15px;
+  padding-bottom: 15px;
+  min-height: 260px;
+}
+.card h3 {
+  padding-top: 5px;
+}
+.card2 {
+}
+.card p {
+  padding-top: 10px;
+  font-size: 30px;
 }
 .repbtn {
   color: #111;
-  font: 13px;
+  font-size: 20px;
   /* background-color: #111; */
-  padding: 1px 16px;
-  height: 45px;
+  padding: 10px 16px;
+  margin-top: 25px;
   width: 111px;
+  height: 55px;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-family: 'Times New Roman', Times, serif;
+}
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 300px;
 }
