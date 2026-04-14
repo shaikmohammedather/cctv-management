@@ -1,0 +1,19 @@
+footer {
+  /* height: 387px; */
+  width: 100%;
+  background: #0b1326;
+  font: 16px;
+  padding: 48px 0px;
+  box-sizing: border-box;
+}
+.fth {
+  color: #dae2fd;
+}
+.fthi {
+  margin-left: 15px;
+}
+.ftp {
+  color: #c3c6d7;
+  font-size: 20px;
+  margin: 0 0 24px;
+}

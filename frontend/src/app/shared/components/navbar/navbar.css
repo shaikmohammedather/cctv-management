@@ -1,0 +1,46 @@
+.navbar {
+  display: flex;
+  height: 76px;
+  background-color: #0b1326;
+  padding: 0px 32px;
+  gap: 20px;
+  width: 100%;
+  box-shadow: 5px black;
+  position: fixed;
+  z-index: 1000;
+}
+.navbar a {
+  color: #dae2fd;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 23px;
+}
+.navbar.search {
+  margin-left: auto;
+}
+.fa-bell {
+  color: white;
+  margin-left: 5px;
+  font-size: 25px;
+}
+.fa-gear {
+  color: white;
+  margin-left: 5px;
+  font-size: 25px;
+}
+.fa-user {
+  color: white;
+  margin-left: 5px;
+  font-size: 25px;
+}
+.burgerbtn {
+  color: rgb(192, 186, 186);
+  margin-left: 5px;
+  font-size: 25px;
+}
+.icons {
+  gap: 15px;
+}
+.bgbtn {
+  background-color: #0b1326;
+  border-style: hidden;
+}
