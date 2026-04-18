@@ -30,11 +30,10 @@ const registerUser = async (req, res, next) => {
       password: hashedPassword,
     });
 
-    const token = generateToken({
-      id: newUser._id,
-      role: newUser.role,
-    });
-
+ const token = generateToken({
+  id: user._id,
+  role: user.role,
+});
     res.status(201).json({
       success: true,
       message: "User registered successfully",
