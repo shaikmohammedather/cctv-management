@@ -1,1 +1,43 @@
-<p>customers works!</p>
+<div class="main">
+  <div class="page-header">
+    <h2>Customer Management</h2>
+    <button class="btn" (click)="addCustomer()">+ Add Customer</button>
+  </div>
+
+  <!-- FORM -->
+  <div *ngIf="showForm">
+    <input type="text" placeholder="Name" [(ngModel)]="customer.name" />
+    <input type="email" placeholder="Email" [(ngModel)]="customer.email" />
+    <input type="text" placeholder="Phone" [(ngModel)]="customer.phone" />
+    <input type="text" placeholder="Address" [(ngModel)]="customer.address" />
+
+    <button (click)="saveCustomer()">Save</button>
+    <button (click)="cancel()">Cancel</button>
+  </div>
+
+  <!-- TABLE -->
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Address</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let customer of customers; let i = index">
+        <td>{{ customer.name }}</td>
+        <td>{{ customer.email }}</td>
+        <td>{{ customer.phone }}</td>
+        <td>{{ customer.address }}</td>
+        <td>
+          <button class="action-btn edit" (click)="editCustomer(i)">Edit</button>
+          <button class="action-btn delete" (click)="deleteCustomer(i)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
