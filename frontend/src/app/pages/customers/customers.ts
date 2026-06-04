@@ -17,7 +17,7 @@ export class Customers implements OnInit {
   showForm = false;
   editMode = false;
 
-  apiUrl = 'http://localhost:3000/api/customer';
+  apiUrl = 'https://cctv-management-backend.onrender.com/api/submit';
 
   constructor(private http: HttpClient) {}
 

@@ -58,27 +58,29 @@ export class Services {
 
     this.isLoading = true;
 
-    this.http.post('http://localhost:3000/api/submit', this.formData).subscribe({
-      next: (response) => {
-        console.log(response);
-        alert('sent request to the owner');
-        this.successMessage = 'Service request submitted successfully';
+    this.http
+      .post('https://cctv-management-backend.onrender.com/api/submit', this.formData)
+      .subscribe({
+        next: (response) => {
+          console.log(response);
+          alert('sent request to the owner');
+          this.successMessage = 'Service request submitted successfully';
 
-        this.isLoading = false;
+          this.isLoading = false;
 
-        this.resetForm();
+          this.resetForm();
 
-        this.isFormOpen = false;
-      },
+          this.isFormOpen = false;
+        },
 
-      error: (error) => {
-        console.log(error);
+        error: (error) => {
+          console.log(error);
 
-        this.errorMessage = 'Failed to submit request';
+          this.errorMessage = 'Failed to submit request';
 
-        this.isLoading = false;
-      },
-    });
+          this.isLoading = false;
+        },
+      });
   }
 
   resetForm() {
