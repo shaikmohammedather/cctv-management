@@ -17,14 +17,14 @@ export class Customers implements OnInit {
   showForm = false;
   editMode = false;
 
-  apiUrl = 'https://cctv-management-backend.onrender.com/api/submit';
+  apiUrl = 'https://cctv-management-backend.onrender.com/api/customer';
 
   constructor(private http: HttpClient) {}
 
-  // ngOnInit() {
-  //   console.log('ngOnInit called');
-  //   this.getCustomers();
-  // }
+  ngOnInit() {
+    console.log('ngOnInit called');
+    this.getCustomers();
+  }
 
   getCustomers() {
     this.http.get<any[]>(this.apiUrl).subscribe((data) => {
@@ -33,10 +33,10 @@ export class Customers implements OnInit {
       // console.log(this.customers.length);
     });
   }
-  ngOnInit() {
-    console.log('ngOnInit called');
-    this.getCustomers();
-  }
+  // ngOnInit() {
+  //   // console.log('ngOnInit called');
+  //   this.getCustomers();
+  // }
   addCustomer() {
     this.customer = {};
     this.editMode = false;
@@ -44,21 +44,26 @@ export class Customers implements OnInit {
   }
   isSaving = false;
   saveCustomer() {
-    if (this.isSaving) return;
-
-    this.isSaving = true;
-
-    this.http.post(this.apiUrl, this.customer).subscribe({
-      next: () => {
-        this.getCustomers();
-        this.resetForm();
-        this.isSaving = false;
-      },
-      error: () => {
-        this.isSaving = false;
-      },
-    });
+    this.customer = {};
+    this.editMode = false;
+    this.showForm = true;
   }
+  // saveCustomer() {
+  //   if (this.isSaving) return;
+
+  //   this.isSaving = true;
+
+  //   this.http.post(this.apiUrl, this.customer).subscribe({
+  //     next: () => {
+  //       this.getCustomers();
+  //       this.resetForm();
+  //       // this.isSaving = false;
+  //     },
+  //     error: () => {
+  //       this.isSaving = false;
+  //     },
+  //   });
+  // }
 
   editCustomer(customer: any) {
     this.customer = { ...customer };
