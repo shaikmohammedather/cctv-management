@@ -62,6 +62,7 @@ export class Services {
       .post('https://cctv-management-backend.onrender.com/api/submit', this.formData)
       .subscribe({
         next: (response) => {
+          console.log('Before email');
           console.log(response);
           alert('sent request to the owner');
           this.successMessage = 'Service request submitted successfully';

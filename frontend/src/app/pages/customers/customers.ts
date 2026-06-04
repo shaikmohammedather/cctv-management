@@ -45,8 +45,8 @@ export class Customers implements OnInit {
   isSaving = false;
   saveCustomer() {
     this.customer = {};
-    this.editMode = false;
-    this.showForm = true;
+    // this.editMode = false;
+    // this.showForm = true;
   }
   // saveCustomer() {
   //   if (this.isSaving) return;
