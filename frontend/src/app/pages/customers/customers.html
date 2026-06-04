@@ -11,10 +11,11 @@
     <input type="text" placeholder="Phone" [(ngModel)]="customer.phone" />
     <input type="text" placeholder="Address" [(ngModel)]="customer.address" />
 
-    <button (click)="saveCustomer()">Save</button>
+    <button [disabled]="isSaving" (click)="saveCustomer()">Save</button>
     <button (click)="cancel()">Cancel</button>
   </div>
-
+  <!-- <p>Total Customers: {{ customers.length }}</p> -->
+  <!-- <p>First Customer: {{ customers[0]?.name }}</p> -->
   <!-- TABLE -->
   <table>
     <thead>
@@ -26,16 +27,15 @@
         <th>Actions</th>
       </tr>
     </thead>
-
     <tbody>
-      <tr *ngFor="let customer of customers; let i = index">
+      <tr *ngFor="let customer of customers">
         <td>{{ customer.name }}</td>
         <td>{{ customer.email }}</td>
         <td>{{ customer.phone }}</td>
         <td>{{ customer.address }}</td>
         <td>
-          <button class="action-btn edit" (click)="editCustomer(i)">Edit</button>
-          <button class="action-btn delete" (click)="deleteCustomer(i)">Delete</button>
+          <button class="action-btn edit" (click)="editCustomer(customer)">Edit</button>
+          <button class="action-btn delete" (click)="deleteCustomer(customer._id)">Delete</button>
         </td>
       </tr>
     </tbody>

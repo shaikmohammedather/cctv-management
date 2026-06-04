@@ -24,7 +24,7 @@ table {
   background: white;
   border-collapse: collapse;
   border-radius: 8px;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 th,
