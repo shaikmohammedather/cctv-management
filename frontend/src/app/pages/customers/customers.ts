@@ -21,21 +21,15 @@ export class Customers implements OnInit {
   constructor(private http: HttpClient) {}
 
   ngOnInit() {
-    console.log('ngOnInit called');
     this.getCustomers();
   }
 
   getCustomers() {
     this.http.get<any[]>(this.apiUrl).subscribe((data) => {
-      // console.log('Customers loaded:', data);
       this.customers = data;
-      // console.log(this.customers.length);
     });
   }
-  // ngOnInit() {
-  //   // console.log('ngOnInit called');
-  //   this.getCustomers();
-  // }
+
   addCustomer() {
     this.customer = {};
     this.editMode = false;
@@ -50,11 +44,14 @@ export class Customers implements OnInit {
 
     this.http.post(this.apiUrl, this.customer).subscribe({
       next: () => {
-        this.getCustomers();
-        this.resetForm();
-        // this.isSaving = false;
+        this.getCustomers(); // Reload customer list
+        this.resetForm(); // Clear form
+        this.showForm = false; // Hide form
+        this.editMode = false;
+        this.isSaving = false;
       },
-      error: () => {
+      error: (err) => {
+        console.error('Save failed:', err);
         this.isSaving = false;
       },
     });

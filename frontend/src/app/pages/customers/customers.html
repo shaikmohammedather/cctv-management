@@ -11,11 +11,10 @@
     <input type="text" placeholder="Phone" [(ngModel)]="customer.phone" />
     <input type="text" placeholder="Address" [(ngModel)]="customer.address" />
 
-    <button [disabled]="isSaving" (click)="saveCustomer()">Save</button>
+    <button (click)="saveCustomer()">Save</button>
     <button (click)="cancel()">Cancel</button>
   </div>
-  <!-- <p>Total Customers: {{ customers.length }}</p> -->
-  <!-- <p>First Customer: {{ customers[0]?.name }}</p> -->
+
   <!-- TABLE -->
   <table>
     <thead>
