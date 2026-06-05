@@ -1,8 +1,6 @@
 import nodemailer from "nodemailer";
 
 const sendEmail = async (options) => {
-  console.log("EMAIL_USER:", process.env.EMAIL_USER);
-  console.log("EMAIL_PASS exists:", !!process.env.EMAIL_PASS);
   const transporter = nodemailer.createTransport({
     host: "smtp.gmail.com",
     port: 587,
@@ -13,9 +11,6 @@ const sendEmail = async (options) => {
       pass: process.env.EMAIL_PASS,
     },
   });
-
-  await transporter.verify();
-  console.log("SMTP verified");
 
   const mailOptions = {
     from: process.env.EMAIL_USER,
