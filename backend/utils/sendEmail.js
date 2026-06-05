@@ -14,6 +14,9 @@ const sendEmail = async (options) => {
     },
   });
 
+  await transporter.verify();
+  console.log("SMTP verified");
+
   const mailOptions = {
     from: process.env.EMAIL_USER,
 

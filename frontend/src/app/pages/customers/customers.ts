@@ -5,7 +5,6 @@ import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-customers',
-  standalone: true,
   imports: [FormsModule, CommonModule],
   templateUrl: './customers.html',
   styleUrl: './customers.css',
@@ -43,27 +42,23 @@ export class Customers implements OnInit {
     this.showForm = true;
   }
   isSaving = false;
+
   saveCustomer() {
-    this.customer = {};
-    // this.editMode = false;
-    // this.showForm = true;
+    if (this.isSaving) return;
+
+    this.isSaving = true;
+
+    this.http.post(this.apiUrl, this.customer).subscribe({
+      next: () => {
+        this.getCustomers();
+        this.resetForm();
+        // this.isSaving = false;
+      },
+      error: () => {
+        this.isSaving = false;
+      },
+    });
   }
-  // saveCustomer() {
-  //   if (this.isSaving) return;
-
-  //   this.isSaving = true;
-
-  //   this.http.post(this.apiUrl, this.customer).subscribe({
-  //     next: () => {
-  //       this.getCustomers();
-  //       this.resetForm();
-  //       // this.isSaving = false;
-  //     },
-  //     error: () => {
-  //       this.isSaving = false;
-  //     },
-  //   });
-  // }
 
   editCustomer(customer: any) {
     this.customer = { ...customer };
